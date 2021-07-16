@@ -1,50 +1,56 @@
 import styled from 'styled-components'
 
+const darkBlue = '#03003F'
+const biege = '#fff0e5'
+const lightGreen = '#45D972'
+const lightRed = '#D94545'
+const lightPurple = '#6400e4'
+
 export const HomePage = styled.div`
     display: flex;
     flex-direction: row;
     height: 100vh;
     width: 100vw;
-    background-color: lightblue;
+    background-color: ${biege};
 `
 
 export const Title = styled.h1`
     font-size: 2.5em;
     text-align: center;
-    color: palevioletred;
+    color: ${darkBlue};
 `
 
 export const Subtitle = styled.h3`
     font-size: 1.5em;
     text-align: center;
-    color: palevioletred;
+    color: ${darkBlue};
 `
 
 export const Container = styled.section`
   padding: 4em;
   margin: 2rem;
-  background: papayawhip;
+  background: white;
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 7px;
   width: 100%;
-  -webkit-box-shadow: -11px 11px 0px -4px #000000; 
-  box-shadow: -11px 11px 0px -4px #000000;
+  -webkit-box-shadow: -11px 11px 0px -4px ${darkBlue}; 
+  box-shadow: -11px 11px 0px -4px ${darkBlue};
 `;
 
 export const Sidebar = styled.section`
   padding: 4em;
   margin: 2rem 0 2rem 2rem;
-  background: papayawhip;
+  background: white;
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 7px;
   width: 25%;
-  -webkit-box-shadow: -11px 11px 0px -4px #000000; 
-  box-shadow: -11px 11px 0px -4px #000000;
-`;
+  -webkit-box-shadow: -11px 11px 0px -4px ${darkBlue}; 
+  box-shadow: -11px 11px 0px -4px ${darkBlue};
+`
 
 // TIMER STYLES
 
-export const TimerContainer = styled.p`
+export const TimerContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,18 +65,20 @@ export const ButtonContainer = styled(TimerContainer)`
 
 export const TimerText = styled.p`
     font-size: 7rem;
+    color: ${darkBlue};
 `
 
 export const Button = styled.button`
-    color: palevioletred;
+    color: ${darkBlue};
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
+    border: 2px solid ${darkBlue};
+    border-radius: 7px;
     width: 150px;
     height: 50px;
     font-size: 1.5rem;
+    background-color: white;
 
     &:hover {
         cursor: pointer;
@@ -78,12 +86,35 @@ export const Button = styled.button`
 `
 
 export const StartButton = styled(Button)`
-  color: darkGreen;
-  border-color: darkGreen;
+  color: ${lightGreen};
+  border-color:  ${lightGreen};
+  transition: 0.175s ease-in-out;
+
+  &:hover {
+    color: white;
+    background-color: ${lightGreen};
+  }
 `;
 
 export const ResetButton = styled(Button)`
-  color: tomato;
-  border-color: tomato;
+  color: ${lightPurple};
+  border-color:  ${lightPurple};
+  transition: 0.175s ease-in-out;
+
+  &:hover {
+    color: white;
+    background-color: ${lightPurple};
+  }
+`;
+
+export const StopButton = styled(Button)`
+  color: ${lightRed};
+  border-color:  ${lightRed};
+  transition: 0.175s ease-in-out;
+  
+  &:hover {
+    color: white;
+    background-color: ${lightRed};
+  }
 `;
 
