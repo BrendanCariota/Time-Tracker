@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer } from '../../Styles'
+import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form } from '../../Styles'
 
 function Timer() {
 
@@ -63,6 +63,9 @@ function Timer() {
                 <StopButton onClick={stopTimer}>Stop</StopButton>
                 <ResetButton onClick={resetTimer}>Reset</ResetButton>
             </ButtonContainer>
+            <Form>
+                
+            </Form>
         </TimerContainer>
     )
 }

@@ -118,3 +118,11 @@ export const StopButton = styled(Button)`
   }
 `;
 
+// FORM STYLES
+
+export const Form = styled.form`
+  width: 80%;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 7px;
+`

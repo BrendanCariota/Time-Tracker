@@ -12,8 +12,7 @@ function HomeScreen() {
 
             </Sidebar>
             <Container>
-                <Title>Home Screen</Title>
-                <Subtitle>Subtitle</Subtitle>
+                <Title>Timer</Title>
                 <Timer />
             </Container>
             
