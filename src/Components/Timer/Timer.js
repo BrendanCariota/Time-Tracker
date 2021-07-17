@@ -36,16 +36,20 @@ function Timer() {
 
     }, [isActive, counter])
 
+    // Reset Timer
+    const resetTimer = () => {
+        setCounter(0)
+        setSeconds('00')
+        setMinutes('00')
+        setHours('00')
+    }
 
     // Stop Timer
     const stopTimer = () => {
-        console.log('stop')
+        setIsActive(false)
     }
 
-    // Reset Timer
-    const resetTimer = () => {
-        console.log('reset')
-    }
+    
 
     return (
         <TimerContainer>
