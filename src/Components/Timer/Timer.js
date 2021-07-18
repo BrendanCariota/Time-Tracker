@@ -9,6 +9,8 @@ function Timer() {
     const [hours, setHours] = useState('00')
     const [counter, setCounter] = useState(0)
     const [isActive, setIsActive] = useState(false)
+    const [textboxValue, setTextboxValue] = useState('')
+    const [list, setList] = useState([])
 
     // Start Timer
     useEffect(() => {
@@ -20,9 +22,9 @@ function Timer() {
                 const minuteCounter = Math.floor(counter / 60)
                 const hourCounter = Math.floor(minuteCounter / 60)
 
-                const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}` : secondCounter
+                const computedSecond = String(secondCounter).length === 1 ? `0${secondCounter}` : `${secondCounter}`
                 const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}` : minuteCounter
-                const computedHour = String(hourCounter).length === 1 ? `0${hourCounter}` : hourCounter
+                const computedHour = String(hourCounter).length === 1 ? `0${hourCounter}` : `${hourCounter}`
 
                 setSeconds(computedSecond)
                 setMinutes(computedMinute)
@@ -49,7 +51,23 @@ function Timer() {
         setIsActive(false)
     }
 
-    
+    // Capture Info
+    const captureInfo = (e) => {
+        e.preventDefault()
+
+        let copy = [...list]
+
+        copy = [...copy, {
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds,
+            notes: textboxValue,
+        }]
+
+        setList(copy)
+    }
+
+    console.log(list)
 
     return (
         <TimerContainer>
@@ -76,8 +94,8 @@ function Timer() {
                         <InputCheckBox boxName="Video Tutorial" type="checkbox" name="video-tutorial"></InputCheckBox>
                     </Checkbox>
                 </CheckboxContainer>
-                <TextArea />
-                <SubmitButton>Submit</SubmitButton>
+                <TextArea value={textboxValue} onChange={(e) => setTextboxValue(e.target.value)}/>
+                <SubmitButton onClick={captureInfo}>Submit</SubmitButton>
             </Form>
         </TimerContainer>
     )
