@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form } from '../../Styles'
+import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form, Checkbox, CheckboxContainer, InputCheckBox, TextArea, SubmitButton, LineBreak } from '../../Styles'
 
 function Timer() {
 
@@ -63,8 +63,21 @@ function Timer() {
                 <StopButton onClick={stopTimer}>Stop</StopButton>
                 <ResetButton onClick={resetTimer}>Reset</ResetButton>
             </ButtonContainer>
+            <LineBreak />
             <Form>
-                
+                <CheckboxContainer>
+                    <Checkbox>
+                        <InputCheckBox  boxName="Projects" type="checkbox" name="project"></InputCheckBox>
+                    </Checkbox>
+                    <Checkbox>
+                        <InputCheckBox boxName="T.O.P" type="checkbox" name="odin"></InputCheckBox>
+                    </Checkbox>
+                    <Checkbox>
+                        <InputCheckBox boxName="Video Tutorial" type="checkbox" name="video-tutorial"></InputCheckBox>
+                    </Checkbox>
+                </CheckboxContainer>
+                <TextArea />
+                <SubmitButton>Submit</SubmitButton>
             </Form>
         </TimerContainer>
     )

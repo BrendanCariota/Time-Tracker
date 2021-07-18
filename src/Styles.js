@@ -5,6 +5,7 @@ const biege = '#fff0e5'
 const lightGreen = '#45D972'
 const lightRed = '#D94545'
 const lightPurple = '#6400e4'
+const checkedColor = '#d3d8ed'
 
 export const HomePage = styled.div`
     display: flex;
@@ -59,7 +60,7 @@ export const TimerContainer = styled.div`
 `
 
 export const ButtonContainer = styled(TimerContainer)`
-    margin: 3rem 0;
+    margin: 2rem 0 1rem 0;
     flex-direction: row;
 `
 
@@ -118,11 +119,92 @@ export const StopButton = styled(Button)`
   }
 `;
 
+export const LineBreak = styled.hr`
+  border: 1px solid ${darkBlue};
+  opacity: 15%;
+  border-radius: 10px;
+  width: 90%;
+`
+
 // FORM STYLES
 
 export const Form = styled.form`
   width: 80%;
-  height: 250px;
-  border: 1px solid black;
-  border-radius: 7px;
+  height: 300pxpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
+export const CheckboxContainer = styled.div`
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const Checkbox = styled.div`
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  line-height: 0;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: ${darkBlue};
+
+  > label {
+    margin-right: 5px;
+  }
+`
+export const InputCheckBox = styled.input`
+    appearance: none;
+    background-color: #fafafa;
+    border: 2px solid ${darkBlue};
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 3px;
+
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(1px)
+    }
+
+    ::after {
+      content: ${props => `"${props.boxName}"`};
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: ${darkBlue};
+      font-weight: bold;
+    }
+
+    &:checked {
+      background-color: ${checkedColor};
+    }
+`
+
+export const TextArea = styled.textarea`
+  width: 75%;
+  height: 200px;
+  margin-top: 15px;
+  padding: 10px;
+`
+export const SubmitButton = styled(Button)`
+  color: ${darkBlue};
+  border-color:  ${darkBlue};
+  transition: 0.175s ease-in-out;
+
+  &:hover {
+    color: white;
+    background-color: ${darkBlue};
+  }
+`;

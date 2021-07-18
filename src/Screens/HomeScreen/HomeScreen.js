@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {HomePage, Title, Subtitle, Container, Sidebar } from '../../Styles'
+import {HomePage, Title, Container, Sidebar } from '../../Styles'
 
 // Components
 import Timer from '../../Components/Timer/Timer'
