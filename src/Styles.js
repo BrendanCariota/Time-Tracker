@@ -38,7 +38,7 @@ export const Container = styled.section`
   box-shadow: -11px 11px 0px -4px ${darkBlue};
 `;
 
-export const Sidebar = styled.section`
+export const SidebarContainer = styled.section`
   padding: 4em;
   margin: 2rem 0 2rem 2rem;
   background: white;

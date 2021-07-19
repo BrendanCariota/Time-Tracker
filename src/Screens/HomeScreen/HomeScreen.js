@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import {HomePage, Title, Container, Sidebar } from '../../Styles'
+import Sidebar from '../../Components/Sidebar/Sidebar'
+
+import {HomePage, Title, Container } from '../../Styles'
 
 // Components
 import Timer from '../../Components/Timer/Timer'
 
 function HomeScreen() {
+
+    const [retrievedList, setRetrievedList] = useState([])
+
     return (
         <HomePage>
-            <Sidebar>
-
-            </Sidebar>
+            <Sidebar retrievedList={retrievedList}/>
             <Container>
                 <Title>Timer</Title>
-                <Timer />
+                <Timer retrievedList={retrievedList} setRetrievedList={setRetrievedList}/>
             </Container>
             
         </HomePage>

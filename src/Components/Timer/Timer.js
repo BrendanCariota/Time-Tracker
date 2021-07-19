@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form, Checkbox, CheckboxContainer, InputCheckBox, TextArea, SubmitButton, LineBreak } from '../../Styles'
 
-function Timer() {
+function Timer({ retrievedList, setRetrievedList }) {
 
     const [seconds, setSeconds] = useState('00')
     const [minutes, setMinutes] = useState('00')
@@ -65,9 +65,10 @@ function Timer() {
         }]
 
         setList(copy)
+        setRetrievedList(copy)
     }
 
-    console.log(list)
+    console.log(retrievedList)
 
     return (
         <TimerContainer>
