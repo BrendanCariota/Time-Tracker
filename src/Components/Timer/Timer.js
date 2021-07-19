@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form, Checkbox, CheckboxContainer, InputCheckBox, TextArea, SubmitButton, LineBreak } from '../../Styles'
+import { TimerText, TimerContainer, StartButton, ResetButton, StopButton, ButtonContainer, Form, Checkbox, CheckboxContainer, InputCheckBox, TextArea, SubmitButton, LineBreak, TextInput } from '../../Styles'
 
 function Timer({ retrievedList, setRetrievedList }) {
 
@@ -10,6 +10,7 @@ function Timer({ retrievedList, setRetrievedList }) {
     const [counter, setCounter] = useState(0)
     const [isActive, setIsActive] = useState(false)
     const [textboxValue, setTextboxValue] = useState('')
+    const [textInputValue, setTextInputValue] = useState('')
     const [list, setList] = useState([])
 
     // Start Timer
@@ -58,6 +59,7 @@ function Timer({ retrievedList, setRetrievedList }) {
         let copy = [...list]
 
         copy = [...copy, {
+            work: textInputValue,
             hours: hours,
             minutes: minutes,
             seconds: seconds,
@@ -84,6 +86,7 @@ function Timer({ retrievedList, setRetrievedList }) {
             </ButtonContainer>
             <LineBreak />
             <Form>
+                <TextInput type='text' placeholder='What did you do?' value={textInputValue} onChange={(e) => setTextInputValue(e.target.value)} />
                 <CheckboxContainer>
                     <Checkbox>
                         <InputCheckBox  boxName="Projects" type="checkbox" name="project"></InputCheckBox>

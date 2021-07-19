@@ -15,7 +15,6 @@ function HomeScreen() {
         <HomePage>
             <Sidebar retrievedList={retrievedList}/>
             <Container>
-                <Title>Timer</Title>
                 <Timer retrievedList={retrievedList} setRetrievedList={setRetrievedList}/>
             </Container>
             

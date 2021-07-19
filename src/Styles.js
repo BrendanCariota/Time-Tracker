@@ -55,7 +55,7 @@ export const TimerContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0;
+    margin: 2rem 0;
     flex-direction: column;
 `
 
@@ -136,8 +136,17 @@ export const Form = styled.form`
   align-items: center;
   flex-direction: column;
 `
+
+export const TextInput = styled.input`
+margin-top: 1.5rem;
+  width: 75%;
+  height: 50px;
+  padding: 10px;
+  font-size: 1.75rem;
+`
+
 export const CheckboxContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -195,7 +204,7 @@ export const InputCheckBox = styled.input`
 export const TextArea = styled.textarea`
   width: 75%;
   height: 200px;
-  margin-top: 15px;
+  margin-top: 1.5rem;
   padding: 10px;
 `
 export const SubmitButton = styled(Button)`
