@@ -11,7 +11,8 @@ function Timer({ retrievedList, setRetrievedList }) {
     const [isActive, setIsActive] = useState(false)
     const [textboxValue, setTextboxValue] = useState('')
     const [textInputValue, setTextInputValue] = useState('')
-    const [list, setList] = useState([])
+    const [checked, setChecked] = useState('')
+    const [list, setList] = useState([{ work: 'Working on Timer', hours:'01', minutes:'32', seconds:'47', notes:'I am finishing up the Sidebar styling', tag:'project'}])
 
     // Start Timer
     useEffect(() => {
@@ -64,13 +65,22 @@ function Timer({ retrievedList, setRetrievedList }) {
             minutes: minutes,
             seconds: seconds,
             notes: textboxValue,
+            tag: checked,
         }]
 
         setList(copy)
         setRetrievedList(copy)
     }
 
-    console.log(retrievedList)
+    // Handle the Checkbox data
+    const handleCheck = (e) => {
+        if (checked !== ''){
+            setChecked('')
+        } else {
+           setChecked(e.target.name) 
+        }
+        
+    }
 
     return (
         <TimerContainer>
@@ -89,13 +99,13 @@ function Timer({ retrievedList, setRetrievedList }) {
                 <TextInput type='text' placeholder='What did you do?' value={textInputValue} onChange={(e) => setTextInputValue(e.target.value)} />
                 <CheckboxContainer>
                     <Checkbox>
-                        <InputCheckBox  boxName="Projects" type="checkbox" name="project"></InputCheckBox>
+                        <InputCheckBox  boxName="Projects" type="checkbox" name="projects" onChange={handleCheck}></InputCheckBox>
                     </Checkbox>
                     <Checkbox>
-                        <InputCheckBox boxName="T.O.P" type="checkbox" name="odin"></InputCheckBox>
+                        <InputCheckBox boxName="T.O.P" type="checkbox" name="odin" onChange={handleCheck}></InputCheckBox>
                     </Checkbox>
                     <Checkbox>
-                        <InputCheckBox boxName="Video Tutorial" type="checkbox" name="video-tutorial"></InputCheckBox>
+                        <InputCheckBox boxName="Video Tutorial" type="checkbox" name="video-tutorials" onChange={handleCheck}></InputCheckBox>
                     </Checkbox>
                 </CheckboxContainer>
                 <TextArea value={textboxValue} onChange={(e) => setTextboxValue(e.target.value)}/>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Sidebar from '../../Components/Sidebar/Sidebar'
 
-import {HomePage, Title, Container } from '../../Styles'
+import {HomePage, Container } from '../../Styles'
 
 // Components
 import Timer from '../../Components/Timer/Timer'

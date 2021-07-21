@@ -39,7 +39,7 @@ export const Container = styled.section`
 `;
 
 export const SidebarContainer = styled.section`
-  padding: 4em;
+  padding: 2em;
   margin: 2rem 0 2rem 2rem;
   background: white;
   border: 1px solid black;
@@ -217,3 +217,50 @@ export const SubmitButton = styled(Button)`
     background-color: ${darkBlue};
   }
 `;
+
+// TIMED EVENT
+export const TimedEventContainer = styled.div`
+  width: 100%;
+  background-color: ${biege};
+  border-radius: 10px;
+`
+
+export const TimedEventTitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+`
+
+export const TimedEventTitle = styled.h1`
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${darkBlue};
+  font-size: 1.25rem;
+  margin: 10px 5px;
+`
+
+export const TimedEventTag = styled.h1`
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${darkBlue};
+  font-size: 0.6rem;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 2px;
+  color: white;
+  background-color: ${lightGreen};
+`
+
+export const TimedEventTime = styled.h1`
+  color: ${darkBlue};
+  margin: 0px 15px;
+  font-size: 1.5rem;
+`
+
+export const TimedEventNotes = styled.p`
+  color: ${darkBlue};
+  margin: 10px 15px;
+  padding-bottom: 10px;
+`
+
